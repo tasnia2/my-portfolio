@@ -1,0 +1,688 @@
+body {
+    margin: 5px;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+/* header */
+.header {
+    height: 85vh;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+/* User box styling (profile image) */
+.user-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.user-box img {
+    border-radius: 70%;
+    width: 190px;
+    border: 2px solid #6caed5;
+}
+
+/* Text box styling (below the profile image) */
+.text-box {
+    text-align: center;
+    position: absolute;
+    top: 63%; /* Positioned below the image */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Styling for animated name */
+.animated-name {
+    font-size: 3rem;
+    color: #fff;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    letter-spacing: 0;
+      word-spacing: 0; / /* No space between letters */
+}
+
+.text-box h5 {
+    color: #fff; /* Forces the text to be white */
+}
+
+/* Keyframes for the animation */
+@keyframes popUp {
+    0% {
+        opacity: 0;
+        transform: translateX(-10px); /* Starting position */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* Ending position */
+    }
+}
+
+/* Apply the animation to each letter with delays */
+.animated-name span {
+    display: inline-block;
+    opacity: 0;
+    animation: popUp 0.5s ease-out forwards;
+     margin-right: -2px; 
+}
+
+/* Delay the animation for each letter using nth-child */
+.animated-name span:nth-child(1) { animation-delay: 0s; }
+.animated-name span:nth-child(2) { animation-delay: 0.1s; }
+.animated-name span:nth-child(3) { animation-delay: 0.2s; }
+.animated-name span:nth-child(4) { animation-delay: 0.3s; }
+.animated-name span:nth-child(5) { animation-delay: 0.4s; }
+.animated-name span:nth-child(6) { animation-delay: 0.5s; }
+.animated-name span:nth-child(7) { animation-delay: 0.6s; }
+.animated-name span:nth-child(8) { animation-delay: 0.7s; }
+.animated-name span:nth-child(9) { animation-delay: 0.8s; }
+.animated-name span:nth-child(10) { animation-delay: 0.9s; }
+.animated-name span:nth-child(11) { animation-delay: 1s; }
+.animated-name span:nth-child(12) { animation-delay: 1.1s; }
+.animated-name span:nth-child(13) { animation-delay: 1.2s; }
+
+/* Scroll button positioning (fixed at bottom) */
+.scroll-btn {
+    position: absolute;
+    bottom: 20px; /* Positioned at the bottom of the page */
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid #fff;
+    padding: 10px 10px 20px;
+    border-radius: 30px;
+}
+
+.scroll-bar span {
+    border: 2px solid #fff;
+    font-size: 10px;
+    border-radius: 30px;
+}
+
+.scroll-bar {
+    animation: mover 1s infinite alternate;
+}
+
+@keyframes mover {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translate(10px);
+    }
+}
+/* Scroll button */
+
+
+/*----------------About----------------------*/
+#about {
+    padding-top: 100px;
+    padding-bottom: -130px;
+} 
+
+.profile-img{
+    height: 700px;
+
+} 
+.nav-bar {
+    top: 0;
+    position: sticky;
+    z-index: 2;
+
+   
+}
+
+.navbar {
+    
+    background-color: #000;
+
+}
+
+.nav-linkkk{
+    color: #fff;
+    font-size: 20px;
+    position: relative;
+   
+    }
+    .nav-linkkk:hover{
+        color: #fff;
+        font-size: 30px;
+        transition: 0.6s;
+    }
+.navbar-nav{
+    margin-left: 50%;
+
+}
+.navbar-nav img{
+    width: 20%;
+    height: 70%;
+
+}
+.nav-item
+{
+    margin-left: 10px;
+}
+
+.nav-link {
+    color: whitesmoke !important;
+   
+
+}
+.nav-link:hover{
+
+    font-weight: bold;
+    transition: 0.6s;
+}
+/* Progress Bar Styles */
+/* Progress Bar Styles */
+.progress {
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  height: 15px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #48a1c4; /* Black fill color */
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  width: 0%; /* Initial width */
+  animation: fillProgress 2s ease-out forwards; /* Add animation */
+}
+
+/* Animation to fill the progress bar from 0% to the data-width percentage */
+@keyframes fillProgress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: var(--progress-width); /* This will be set dynamically */
+  }
+}
+
+/* Apply the data-width as a custom property */
+.progress-bar[data-width="80"] {
+  --progress-width: 80%;
+}
+
+.progress-bar[data-width="70"] {
+  --progress-width: 70%;
+}
+
+.progress-bar[data-width="75"] {
+  --progress-width: 75%;
+}
+
+.progress-bar[data-width="65"] {
+  --progress-width: 65%;
+}
+
+.progress-bar[data-width="90"] {
+  --progress-width: 90%;
+}
+
+
+/*------------------------------Resume----------------------*/
+/* Main Resume Section */
+/* Resume Section */
+
+.resume {
+    margin-top: -100px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background: #f9f9f9;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+/* Heading Styles */
+.resume h3 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 50px;
+    color: #444;
+}
+
+/* Timeline Layout */
+.timeline {
+    list-style-type: none;
+    position: relative;
+    padding-left: 40px;
+    margin: 0;
+}
+
+/* Timeline Connector Line */
+.timeline:before {
+    content: ' ';
+    background: linear-gradient(180deg, #2f87ad 0%, #2f87ad 100%);
+    display: inline-block;
+    position: absolute;
+    left: 19px;
+    width: 3px;
+    height: 100%;
+    z-index: 1;
+    border-radius: 3px;
+}
+
+/* Individual Timeline Item */
+.timeline li {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    opacity: 0;
+    transform: translateX(-100px);
+    animation: slideIn 1s forwards;
+}
+
+/* Even Timeline Item Background */
+.timeline li:nth-child(even) {
+    background-color: #f3f3f3;
+}
+
+/* Timeline Item Heading */
+.timeline h4 {
+    background-color: #2f87ad;
+    padding: 10px;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+/* Timeline Item Heading Span */
+.timeline h4 span {
+    font-weight: bold;
+    color: #ddd;
+}
+
+/* Timeline Item Circular Markers */
+.timeline li:before {
+    content: ' ';
+    background: #2f87ad;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    left: 10px;
+    top: 15px;
+    width: 20px;
+    height: 20px;
+    z-index: 1;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover Effect for Timeline Items */
+.timeline li:hover {
+    background-color: #2f87ad;
+    transition: all 0.3s ease;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover Effect for Timeline Item Heading */
+.timeline li:hover h4 {
+    background-color: #2f87ad;
+    transition: background-color 0.3s ease;
+}
+
+/* Animation for Timeline Items */
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Soft Skills Section */
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;  /* Ensure two circles per row */
+  margin-top: 40px;
+}
+
+.skill {
+  text-align: center;
+  flex-basis: 45%;  /* Two circles per row */
+  margin-bottom: 40px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s forwards;
+}
+
+.circle-progress {
+  width: 120px;
+  height: 120px;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+  transform: rotate(0deg); /* Start circle from the top (12 o'clock) */
+}
+
+.circle-progress circle {
+  fill: none;
+  stroke-width: 10;
+}
+
+.bg {
+  stroke: #eee; /* Background of the circle */
+}
+
+.progress {
+  stroke: #00b4d8;
+  stroke-dasharray: 314; /* Circumference of the circle (2 * pi * radius, 2 * pi * 50) */
+  stroke-dashoffset: 314; /* Start with no fill (full circle) */
+  transition: stroke-dashoffset 2s ease-out; /* Smooth fill animation */
+}
+
+.circle-progress text {
+  font-size: 18px;
+  font-weight: bold;
+  fill: #333;
+  transform: rotate(0deg); /* Ensure the text stays horizontal */
+  alignment-baseline: middle; /* Vertically center text */
+  text-anchor: middle; /* Horizontally center text */
+}
+
+/* Animation: Fade in from below */
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Keyframes for the circle fill animation */
+@keyframes progressAnimation {
+  from {
+    stroke-dashoffset: 314; /* Start with no fill */
+  }
+  to {
+    stroke-dashoffset: calc(314 - (314 * var(--percentage) / 100)); /* Fill based on percentage */
+  }
+}
+
+/* Individual skill progress animations */
+.skill:nth-child(1) .progress {
+  --percentage: 90; /* Set the desired percentage */
+  animation: progressAnimation 2s forwards;
+}
+
+.skill:nth-child(2) .progress {
+  --percentage: 85; /* Set the desired percentage */
+  animation: progressAnimation 2s forwards;
+  animation-delay: 0.2s;
+}
+
+.skill:nth-child(3) .progress {
+  --percentage: 80; /* Set the desired percentage */
+  animation: progressAnimation 2s forwards;
+  animation-delay: 0.4s;
+}
+
+.skill:nth-child(4) .progress {
+  --percentage: 75; /* Set the desired percentage */
+  animation: progressAnimation 2s forwards;
+  animation-delay: 0.6s;
+}
+
+.skill:nth-child(5) .progress {
+  --percentage: 70; /* Set the desired percentage */
+  animation: progressAnimation 2s forwards;
+  animation-delay: 0.8s;
+}
+
+.skill:nth-child(6) .progress {
+  --percentage: 65; /* Set the desired percentage */
+  animation: progressAnimation 2s forwards;
+  animation-delay: 1s;
+}
+
+
+
+/*--------------------------Survice----------*/
+.services
+{
+   padding-top: 50px;
+   padding-bottom: 50px;
+   color: #555;
+   justify-content: space-evenly;
+
+}
+.services h1{
+    margin: bottom 15px; 
+}
+
+.services-box{
+    background-color: #d6cfcf;
+    padding: 10px;
+    margin-top: 20px;
+    
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+
+}
+.services-box .fa-solid{
+    color: #161515;
+margin: 0 10px;
+
+font-size: 20px;
+
+}
+
+.services-box span{
+    color: #000;
+    margin: 10px;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+.services-box p{
+    margin-left: 5px;
+    margin-top: 20px;
+    font-size: 15px;
+    color: #777;
+
+}
+.services-box:hover{
+    background: #1580b1;
+    color: #fff;  
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    transition: 1s;
+
+}
+.services-box:hover p{
+    color: #fff;
+}
+.services-box:hover span{
+    color:#fff;
+}
+
+/*-------------------Contact--------------*/
+.contact {
+    padding-top: 30px;
+    background-color: #161515;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+    position: relative;
+}
+
+.contact h1,
+.contact p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/* Row and column styling */
+.contact .row {
+    padding: 30px 0;
+    font-size: 22px;
+}
+
+.contact .col-md-4 .fa-solid,
+.contact .col-md-4 .fa-brands {
+    padding: 10px;
+    font-size: 40px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.contact .col-md-4:hover .fa-solid,
+.contact .col-md-4:hover .fa-brands {
+    transform: scale(1.1);
+}
+
+/* Button styling */
+.contact .btn {
+    padding: 10px 25px;
+    margin: 5px;
+    border-radius: 30px;
+    border: 2px solid #fff;
+    background: transparent;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: 0.6s;
+}
+
+.contact .btn:focus {
+    box-shadow: none !important;
+}
+
+.contact .btn:hover {
+    border: 2px solid #000 !important;
+    background: #000 !important;
+}
+
+.contact .btn .fa-solid {
+    margin-right: 10px;
+}
+
+/* Footer animation */
+.footer {
+    background: #000;
+    height: 50px;
+    margin-top: 50px;
+    color: #fff;
+    padding-top: 10px;
+    position: relative;
+}
+
+/* Advanced animations */
+.contact .buttons button {
+    animation: buttonHover 2s ease-in-out infinite;
+}
+
+@keyframes buttonHover {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Contact icons with delay and animations */
+.contact .row .col-md-4 {
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.contact .row .col-md-4:nth-child(1) {
+    animation-delay: 1s;
+}
+
+.contact .row .col-md-4:nth-child(2) {
+    animation-delay: 1.5s;
+}
+
+.contact .row .col-md-4:nth-child(3) {
+    animation-delay: 2s;
+}
+
+/* Footer fade-in animation */
+.footer p {
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+    animation-delay: 2.5s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Animation for the Contact Title */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Social Media section stays the same */
+.social-icon {
+   top: 50%;
+   transform: translateY(-50%); 
+   position: sticky;
+   z-index: 1;
+   width: 60px;
+}
+
+.social-icon ul {
+    padding: initial;
+}
+
+.social-icon ul li {
+    height: 30px;
+    width: 30px;
+    list-style-type: none;
+    padding-left: 12px;
+    padding-top: 6px;
+    margin-top: 5px;
+    color: #fff;
+    background: #000;
+}
+
+.social-icon ul li:hover {
+    padding-left: 30px;
+    width: 60px;
+    transition: 1s;
+}
